@@ -1,16 +1,16 @@
 <idea-plugin>
-  <id>com.your.company.unique.plugin.id</id>
-  <name>Plugin display name here</name>
+  <id>PojoToJson</id>
+  <name>PojoToJson</name>
   <version>1.0</version>
-  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+  <vendor email="chengsheng@qbb6.com" url="http://www.qbb6.com">QBB</vendor>
 
   <description><![CDATA[
-      Enter short description for your plugin here.<br>
-      <em>most HTML tags may be used</em>
+      Java Class to json plugin<br>
+      <em>use way: right click choose BuildJson</em>
     ]]></description>
 
   <change-notes><![CDATA[
-      Add change notes here.<br>
+      1.0.0<br>
       <em>most HTML tags may be used</em>
     ]]>
   </change-notes>
