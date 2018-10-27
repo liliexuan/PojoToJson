@@ -36,6 +36,9 @@
     <action id="BuildJsonWithType" class="BuildJsonWithType" text="BuildJsonWithType" description="BuildJsonWithType">
       <add-to-group group-id="EditorLangPopupMenu" anchor="first"/>
     </action>
+    <action id="BuildJson" class="BuildJson" text="BuildJson" description="BuildJson">
+      <add-to-group group-id="EditorLangPopupMenu" anchor="first"/>
+    </action>
   </actions>
 
   <application-components>
