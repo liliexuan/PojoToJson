@@ -19,7 +19,7 @@ import java.awt.datatransfer.StringSelection;
 import java.util.*;
 
 
-public class BuildJson extends AnAction {
+public class BuildJsonWithType extends AnAction {
     private static NotificationGroup notificationGroup;
 
     @NonNls

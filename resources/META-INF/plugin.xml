@@ -6,7 +6,7 @@
 
   <description><![CDATA[
       Java Class to json plugin<br>
-      <em>use way: right click choose BuildJson</em>
+      <em>use way: right click choose BuildJsonWithType or BuildJson or BuildJsonForYapi</em>
     ]]></description>
 
   <change-notes><![CDATA[
@@ -33,7 +33,7 @@
     <action id="SayHello" class="SayHelloAction" text="SayHello" description="SayHello">
       <add-to-group group-id="WindowMenu" anchor="first"/>
     </action>
-    <action id="BuildJson" class="BuildJson" text="BuildJson" description="BuildJson">
+    <action id="BuildJsonWithType" class="BuildJsonWithType" text="BuildJsonWithType" description="BuildJsonWithType">
       <add-to-group group-id="EditorLangPopupMenu" anchor="first"/>
     </action>
   </actions>
