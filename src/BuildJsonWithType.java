@@ -30,7 +30,14 @@ public class BuildJsonWithType extends AnAction {
 
     static {
         notificationGroup = new NotificationGroup("Java2Json.NotificationGroup", NotificationDisplayType.BALLOON, true);
-
+        normalTypes.put("int",1);
+        normalTypes.put("boolean",false);
+        normalTypes.put("byte",1);
+        normalTypes.put("short",1);
+        normalTypes.put("long",1L);
+        normalTypes.put("float",1.0F);
+        normalTypes.put("double",1.0D);
+        normalTypes.put("char",'a');
         normalTypes.put("Boolean", false);
         normalTypes.put("Byte", 0);
         normalTypes.put("Short", Short.valueOf((short) 0));
@@ -84,7 +91,12 @@ public class BuildJsonWithType extends AnAction {
                 }
                 // 如果是基本类型
                 if (type instanceof PsiPrimitiveType) {
-                    kv.set(name, PsiTypesUtil.getDefaultValueOfType(type));
+                    JsonObject jsonObject=new JsonObject();
+                    jsonObject.addProperty("type",type.getPresentableText());
+                    if(!Strings.isNullOrEmpty(remark)) {
+                        jsonObject.addProperty("description", remark);
+                    }
+                    kv.set(name, jsonObject);
                 } else {
                     //reference Type
                     String fieldTypeName = type.getPresentableText();
@@ -102,7 +114,12 @@ public class BuildJsonWithType extends AnAction {
                         ArrayList list = new ArrayList<>();
                         String deepTypeName = deepType.getPresentableText();
                         if (deepType instanceof PsiPrimitiveType) {
-                            list.add(PsiTypesUtil.getDefaultValueOfType(deepType));
+                            JsonObject jsonObject=new JsonObject();
+                            jsonObject.addProperty("type",type.getPresentableText());
+                            if(!Strings.isNullOrEmpty(remark)) {
+                                jsonObject.addProperty("description", remark);
+                            }
+                            list.add(jsonObject);
                         } else if (isNormalType(deepTypeName)) {
                             JsonObject jsonObject=new JsonObject();
                             jsonObject.addProperty("type",deepTypeName);

@@ -30,7 +30,6 @@ public class BuildJson extends AnAction {
 
     static {
         notificationGroup = new NotificationGroup("Java2Json.NotificationGroup", NotificationDisplayType.BALLOON, true);
-
         normalTypes.put("Boolean", false);
         normalTypes.put("Byte", 0);
         normalTypes.put("Short", Short.valueOf((short) 0));
