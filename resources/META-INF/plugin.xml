@@ -1,7 +1,7 @@
 <idea-plugin>
   <id>PojoToJson</id>
   <name>PojoToJson</name>
-  <version>1.0</version>
+  <version>1.0.0</version>
   <vendor email="chengsheng@qbb6.com" url="http://www.qbb6.com">QBB</vendor>
 
   <description><![CDATA[
@@ -10,8 +10,7 @@
     ]]></description>
 
   <change-notes><![CDATA[
-      1.0.0<br>
-      <em>most HTML tags may be used</em>
+      1.0.0:BuildJson,BuildJsonWithType,BuildJsonForYapi,insufficient：Does not support HashMap and Map<br>
     ]]>
   </change-notes>
 

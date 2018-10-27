@@ -10,8 +10,7 @@
     ]]></description>
 
   <change-notes><![CDATA[
-      1.0.0<br>
-      <em>most HTML tags may be used</em>
+      1.0.0:BuildJson,BuildJsonWithType,BuildJsonForYapi,insufficient：Does not support HashMap and Map<br>
     ]]>
   </change-notes>
 

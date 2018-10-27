@@ -5,10 +5,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * Map简化操作类
- *
- * @author linsage
- * @create 2017-06-14  上午11:06
+ * @description: kv
+ * @author: chengsheng@qbb6.com
+ * @date: 2018/10/27
  */
 public class KV<K, V> extends LinkedHashMap<K, V> {
     public <K, V> KV() {
