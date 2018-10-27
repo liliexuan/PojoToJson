@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa7f71ab-fd49-43e2-9da5-930c8c2ec5d3" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/SayHelloAction.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PojoToJson.jar" afterPath="$PROJECT_DIR$/PojoToJson.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PojoToJson/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/out/production/PojoToJson/META-INF/plugin.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BuildJson.java" afterPath="$PROJECT_DIR$/src/BuildJson.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BuildJsonForYapi.java" afterPath="$PROJECT_DIR$/src/BuildJsonForYapi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BuildJsonWithType.java" afterPath="$PROJECT_DIR$/src/BuildJsonWithType.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/KV.java" afterPath="$PROJECT_DIR$/src/KV.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PojoToJson.java" afterPath="$PROJECT_DIR$/src/PojoToJson.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,22 +26,20 @@
       <file leaf-file-name="plugin.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43">
-              <caret line="17" column="37" lean-forward="true" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+            <state relative-caret-position="283">
+              <caret line="29" column="11" lean-forward="true" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BuildJson.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BuildJson.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BuildJson.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="65" column="30" lean-forward="false" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
+            <state relative-caret-position="66">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1640#1641#0" expanded="true" />
-                <element signature="e#1696#1697#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -45,9 +48,11 @@
       <file leaf-file-name="BuildJsonForYapi.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BuildJsonForYapi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2280">
-              <caret line="177" column="17" lean-forward="false" selection-start-line="177" selection-start-column="17" selection-end-line="177" selection-end-column="17" />
-              <folding />
+            <state relative-caret-position="285">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -55,11 +60,10 @@
       <file leaf-file-name="BuildJsonWithType.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BuildJsonWithType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1980">
-              <caret line="152" column="80" lean-forward="false" selection-start-line="152" selection-start-column="37" selection-end-line="152" selection-end-column="80" />
+            <state relative-caret-position="209">
+              <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
               <folding>
-                <element signature="e#1478#1479#0" expanded="true" />
-                <element signature="e#1534#1535#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -78,21 +82,9 @@
       <file leaf-file-name="PojoToJson.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PojoToJson.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="23" />
+            <state relative-caret-position="330">
+              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SayHelloAction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SayHelloAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -107,7 +99,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KV.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="KV.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/KV.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
@@ -146,12 +138,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/SayHelloAction.java" />
-        <option value="$PROJECT_DIR$/src/PojoToJson.java" />
         <option value="$PROJECT_DIR$/src/TypeDescription.java" />
-        <option value="$PROJECT_DIR$/src/BuildJson.java" />
-        <option value="$PROJECT_DIR$/src/BuildJsonForYapi.java" />
-        <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
         <option value="$PROJECT_DIR$/src/KV.java" />
+        <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
+        <option value="$PROJECT_DIR$/src/PojoToJson.java" />
+        <option value="$PROJECT_DIR$/src/BuildJsonWithType.java" />
+        <option value="$PROJECT_DIR$/src/BuildJsonForYapi.java" />
+        <option value="$PROJECT_DIR$/src/BuildJson.java" />
       </list>
     </option>
   </component>
@@ -380,7 +373,7 @@
       <workItem from="1540564781268" duration="2085000" />
       <workItem from="1540623666070" duration="7454000" />
       <workItem from="1540641794267" duration="734000" />
-      <workItem from="1540642658255" duration="174000" />
+      <workItem from="1540642658255" duration="363000" />
     </task>
     <task id="LOCAL-00001" summary="修改信息">
       <created>1540566431367</created>
@@ -393,7 +386,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23923000" />
+    <option name="totallyTimeSpent" value="24112000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="-280" width="1920" height="1080" extended-state="0" />
@@ -448,7 +441,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/BuildJsonForYapi.java</url>
-          <line>65</line>
+          <line>58</line>
           <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
@@ -488,8 +481,7 @@
         <state relative-caret-position="1155">
           <caret line="77" column="42" lean-forward="false" selection-start-line="77" selection-start-column="34" selection-end-line="77" selection-end-column="42" />
           <folding>
-            <element signature="e#1478#1479#0" expanded="true" />
-            <element signature="e#1534#1535#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -535,9 +527,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="16" column="30" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="16" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -585,8 +575,7 @@
         <state relative-caret-position="-447">
           <caret line="41" column="38" lean-forward="true" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
           <folding>
-            <element signature="e#1478#1479#0" expanded="true" />
-            <element signature="e#1534#1535#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -611,9 +600,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="16" column="30" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="16" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -659,8 +646,7 @@
         <state relative-caret-position="1515">
           <caret line="121" column="0" lean-forward="false" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
           <folding>
-            <element signature="e#1478#1479#0" expanded="true" />
-            <element signature="e#1534#1535#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -685,9 +671,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="30" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="16" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -719,8 +703,7 @@
         <state relative-caret-position="1155">
           <caret line="77" column="42" lean-forward="false" selection-start-line="77" selection-start-column="34" selection-end-line="77" selection-end-column="42" />
           <folding>
-            <element signature="e#1478#1479#0" expanded="true" />
-            <element signature="e#1534#1535#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -747,14 +730,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TypeDescription.java" />
-    <entry file="file://$PROJECT_DIR$/src/PojoToJson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/psi/PsiClass.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -768,20 +743,7 @@
         <state relative-caret-position="533">
           <caret line="51" column="13" lean-forward="true" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
           <folding>
-            <element signature="e#1478#1479#0" expanded="true" />
-            <element signature="e#1534#1535#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BuildJson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="65" column="30" lean-forward="false" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
-          <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1640#1641#0" expanded="true" />
-            <element signature="e#1696#1697#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -800,32 +762,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SayHelloAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/gson-2.5.jar!/com/google/gson/JsonObject.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="15" column="11" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BuildJsonWithType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1980">
-          <caret line="152" column="80" lean-forward="false" selection-start-line="152" selection-start-column="37" selection-end-line="152" selection-end-column="80" />
-          <folding>
-            <element signature="e#1478#1479#0" expanded="true" />
-            <element signature="e#1534#1535#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -836,18 +777,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BuildJsonForYapi.java">
+    <entry file="file://$PROJECT_DIR$/src/SayHelloAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2280">
-          <caret line="177" column="17" lean-forward="false" selection-start-line="177" selection-start-column="17" selection-end-line="177" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="17" column="37" lean-forward="true" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+        <state relative-caret-position="150">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -857,6 +790,52 @@
         <state relative-caret-position="120">
           <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="29" column="11" lean-forward="true" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PojoToJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BuildJsonWithType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BuildJsonForYapi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BuildJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

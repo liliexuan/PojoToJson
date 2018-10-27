@@ -28,10 +28,6 @@
   </extensions>
 
   <actions>
-    <!-- Add your actions here -->
-    <action id="SayHello" class="SayHelloAction" text="SayHello" description="SayHello">
-      <add-to-group group-id="WindowMenu" anchor="first"/>
-    </action>
     <action id="BuildJsonWithType" class="BuildJsonWithType" text="BuildJsonWithType" description="BuildJsonWithType">
       <add-to-group group-id="EditorLangPopupMenu" anchor="first"/>
     </action>

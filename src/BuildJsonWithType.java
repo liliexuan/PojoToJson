@@ -1,4 +1,3 @@
-import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.intellij.notification.*;
 import com.intellij.openapi.actionSystem.AnAction;
@@ -18,7 +17,11 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.util.*;
 
-
+/**
+ * @description:  带有类型的json
+ * @author: chengsheng@qbb6.com
+ * @date: 2018/10/27
+ */
 public class BuildJsonWithType extends AnAction {
     private static NotificationGroup notificationGroup;
 

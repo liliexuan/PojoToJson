@@ -23,14 +23,4 @@ public class PojoToJson implements ApplicationComponent {
         return "PojoToJson";
     }
 
-
-
-    public void sayHello(){
-        Messages.showMessageDialog("hello world","Sample",Messages.getInformationIcon());
-    }
-
-
-    public void println(String className){
-        Messages.showMessageDialog(className,"我是打印类名称",Messages.getInformationIcon());
-    }
 }

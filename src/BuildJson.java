@@ -18,8 +18,6 @@ import java.util.*;
 
 /**
  * @description: 基本生成json
- * @param: 
- * @return: 
  * @author: chengsheng@qbb6.com
  * @date: 2018/10/27
  */ 
