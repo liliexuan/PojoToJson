@@ -1,4 +1,4 @@
-import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.intellij.notification.*;
 import com.intellij.openapi.actionSystem.AnAction;
@@ -10,14 +10,13 @@ import com.intellij.psi.*;
 import com.intellij.psi.util.PsiTreeUtil;
 import com.intellij.psi.util.PsiTypesUtil;
 import com.intellij.psi.util.PsiUtil;
+import com.yourkit.util.Strings;
 import org.jetbrains.annotations.NonNls;
 
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 
 public class BuildJson extends AnAction {
@@ -75,6 +74,11 @@ public class BuildJson extends AnAction {
             for (PsiField field : psiClass.getAllFields()) {
                 PsiType type = field.getType();
                 String name = field.getName();
+                String remark ="";
+                if(field.getDocComment()!=null) {
+                    remark=field.getDocComment().getText().replace("*", "").replace("/", "").replace(" ", "").replace("\n", ",");
+                    remark=trimFirstAndLastChar(remark,',');
+                }
                 // 如果是基本类型
                 if (type instanceof PsiPrimitiveType) {
                     kv.set(name, PsiTypesUtil.getDefaultValueOfType(type));
@@ -85,7 +89,9 @@ public class BuildJson extends AnAction {
                     if (isNormalType(fieldTypeName)) {
                        JsonObject jsonObject=new JsonObject();
                        jsonObject.addProperty("type",fieldTypeName);
-                       jsonObject.addProperty("description","");
+                        if(!Strings.isNullOrEmpty(remark)) {
+                            jsonObject.addProperty("description", remark);
+                        }
                         kv.set(name, jsonObject);
                     } else if (type instanceof PsiArrayType) {
                         //array type
@@ -97,7 +103,9 @@ public class BuildJson extends AnAction {
                         } else if (isNormalType(deepTypeName)) {
                             JsonObject jsonObject=new JsonObject();
                             jsonObject.addProperty("type",deepTypeName);
-                            jsonObject.addProperty("description","");
+                            if(!Strings.isNullOrEmpty(remark)) {
+                                jsonObject.addProperty("description", remark);
+                            }
                             list.add(jsonObject);
                         } else {
                             list.add(getFields(PsiUtil.resolveClassInType(deepType)));
@@ -112,7 +120,9 @@ public class BuildJson extends AnAction {
                         if (isNormalType(classTypeName)) {
                             JsonObject jsonObject=new JsonObject();
                             jsonObject.addProperty("type",classTypeName);
-                            jsonObject.addProperty("description","");
+                            if(!Strings.isNullOrEmpty(remark)) {
+                                jsonObject.addProperty("description", remark);
+                            }
                             list.add(jsonObject);
                         } else {
                             list.add(getFields(iterableClass));
@@ -121,6 +131,23 @@ public class BuildJson extends AnAction {
                     } else if(fieldTypeName.startsWith("HashMap") || fieldTypeName.startsWith("Map")){
                         //HashMap or Map
 
+                    }else if (fieldTypeName.startsWith("Set") || fieldTypeName.startsWith("HashSet")){
+                        //set hashset type
+                        PsiType iterableType = PsiUtil.extractIterableTypeParameter(type, false);
+                        PsiClass iterableClass = PsiUtil.resolveClassInClassTypeOnly(iterableType);
+                        Set set = new HashSet();
+                        String classTypeName = iterableClass.getName();
+                        if (isNormalType(classTypeName)) {
+                            JsonObject jsonObject=new JsonObject();
+                            jsonObject.addProperty("type",classTypeName);
+                            if(!Strings.isNullOrEmpty(remark)) {
+                                jsonObject.addProperty("description", remark);
+                            }
+                            set.add(jsonObject);
+                        } else {
+                            set.add(getFields(iterableClass));
+                        }
+                        kv.set(name, set);
                     }else {
                         //class type
                         kv.set(name, getFields(PsiUtil.resolveClassInType(type)));
@@ -130,5 +157,25 @@ public class BuildJson extends AnAction {
         }
 
         return kv;
+    }
+
+
+    /**
+     * 去除字符串首尾出现的某个字符.
+     * @param source 源字符串.
+     * @param element 需要去除的字符.
+     * @return String.
+     */
+    public static String trimFirstAndLastChar(String source,char element) {
+        boolean beginIndexFlag = true;
+        boolean endIndexFlag = true;
+        do {
+            int beginIndex = source.indexOf(element) == 0 ? 1 : 0;
+            int endIndex = source.lastIndexOf(element) + 1 == source.length() ? source.lastIndexOf(element) : source.length();
+            source = source.substring(beginIndex, endIndex);
+            beginIndexFlag = (source.indexOf(element) == 0);
+            endIndexFlag = (source.lastIndexOf(element) + 1 == source.length());
+        } while (beginIndexFlag || endIndexFlag);
+        return source;
     }
 }
