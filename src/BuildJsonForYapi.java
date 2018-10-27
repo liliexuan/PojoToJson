@@ -7,7 +7,6 @@ import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.*;
 import com.intellij.psi.util.PsiTreeUtil;
-import com.intellij.psi.util.PsiTypesUtil;
 import com.intellij.psi.util.PsiUtil;
 import com.yourkit.util.Strings;
 import org.codehaus.jettison.json.JSONException;
@@ -17,6 +16,8 @@ import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.util.*;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @description: 为了yapi 创建的
@@ -64,7 +65,7 @@ public class BuildJsonForYapi extends AnAction {
         PsiClass selectedClass = (PsiClass) PsiTreeUtil.getContextOfType(referenceAt, new Class[]{PsiClass.class});
         try {
             KV result=new KV();
-            KV kv = getFields(selectedClass);
+            KV kv = getFields(selectedClass,project);
             result.set("type","object");
             result.set("title",selectedClass.getName());
             result.set("description",selectedClass.getName());
@@ -83,7 +84,7 @@ public class BuildJsonForYapi extends AnAction {
     }
 
 
-    public static KV getFields(PsiClass psiClass) throws JSONException {
+    public static KV getFields(PsiClass psiClass,Project project) throws JSONException {
         KV kv = KV.create();
 
         if (psiClass != null) {
@@ -134,7 +135,7 @@ public class BuildJsonForYapi extends AnAction {
                             if(!Strings.isNullOrEmpty(remark)) {
                                 kvlist.set(KV.by("description",remark));
                             }
-                            kvlist.set("properties",getFields(PsiUtil.resolveClassInType(deepType)));
+                            kvlist.set("properties",getFields(PsiUtil.resolveClassInType(deepType),project));
                         }
                         KV kv1=new KV();
                         kv1.set(KV.by("type","array"));
@@ -159,7 +160,7 @@ public class BuildJsonForYapi extends AnAction {
                             if(!Strings.isNullOrEmpty(remark)) {
                                 kvlist.set(KV.by("description",remark));
                             }
-                            kvlist.set("properties",getFields(iterableClass));
+                            kvlist.set("properties",getFields(iterableClass,project));
                         }
                         KV kv1=new KV();
                         kv1.set(KV.by("type","array"));
@@ -170,7 +171,15 @@ public class BuildJsonForYapi extends AnAction {
                         kv.set(name, kv1);
                     } else if(fieldTypeName.startsWith("HashMap") || fieldTypeName.startsWith("Map")){
                         //HashMap or Map
-
+                        CompletableFuture.runAsync(()->{
+                            try {
+                                TimeUnit.MILLISECONDS.sleep(700);
+                                Notification warning = notificationGroup.createNotification("Map Type Can not Change,So pass", NotificationType.WARNING);
+                                Notifications.Bus.notify(warning, project);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        });
                     }else {
                         //class type
                         KV kv1=new KV();
@@ -178,7 +187,7 @@ public class BuildJsonForYapi extends AnAction {
                         if(!Strings.isNullOrEmpty(remark)) {
                             kv1.set(KV.by("description",remark));
                         }
-                        kv1.set(KV.by("properties",getFields(PsiUtil.resolveClassInType(type))));
+                        kv1.set(KV.by("properties",getFields(PsiUtil.resolveClassInType(type),project)));
                         kv.set(name,kv1);
                     }
                 }

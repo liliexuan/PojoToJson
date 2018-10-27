@@ -15,6 +15,8 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @description: 基本生成json
@@ -55,7 +57,7 @@ public class BuildJson extends AnAction {
         PsiElement referenceAt = psiFile.findElementAt(editor.getCaretModel().getOffset());
         PsiClass selectedClass = (PsiClass) PsiTreeUtil.getContextOfType(referenceAt, new Class[]{PsiClass.class});
         try {
-            KV kv = getFields(selectedClass);
+            KV kv = getFields(selectedClass,project);
             String json = kv.toPrettyJson();
             StringSelection selection = new StringSelection(json);
             Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
@@ -70,7 +72,7 @@ public class BuildJson extends AnAction {
     }
 
 
-    public static KV getFields(PsiClass psiClass) {
+    public static KV getFields(PsiClass psiClass,Project project) {
         KV kv = KV.create();
 
         if (psiClass != null) {
@@ -96,7 +98,7 @@ public class BuildJson extends AnAction {
                         } else if (isNormalType(deepTypeName)) {
                             list.add(normalTypes.get(deepTypeName));
                         } else {
-                            list.add(getFields(PsiUtil.resolveClassInType(deepType)));
+                            list.add(getFields(PsiUtil.resolveClassInType(deepType),project));
                         }
                         kv.set(name, list);
                     } else if (fieldTypeName.startsWith("List")) {
@@ -108,12 +110,20 @@ public class BuildJson extends AnAction {
                         if (isNormalType(classTypeName)) {
                             list.add(normalTypes.get(classTypeName));
                         } else {
-                            list.add(getFields(iterableClass));
+                            list.add(getFields(iterableClass,project));
                         }
                         kv.set(name, list);
                     } else if(fieldTypeName.startsWith("HashMap") || fieldTypeName.startsWith("Map")){
                         //HashMap or Map
-
+                     //   PsiType mapType = PsiUtil.extractIterableTypeParameter(type, false);
+                        CompletableFuture.runAsync(()->{
+                            try {
+                                TimeUnit.MILLISECONDS.sleep(700);
+                                Notification warning = notificationGroup.createNotification("Map Type Can not Change,So pass", NotificationType.WARNING);
+                                Notifications.Bus.notify(warning, project);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
                     }else if (fieldTypeName.startsWith("Set") || fieldTypeName.startsWith("HashSet")){
                         //set hashset type
                         PsiType iterableType = PsiUtil.extractIterableTypeParameter(type, false);
@@ -123,12 +133,12 @@ public class BuildJson extends AnAction {
                         if (isNormalType(classTypeName)) {
                             set.add(normalTypes.get(classTypeName));
                         } else {
-                            set.add(getFields(iterableClass));
+                            set.add(getFields(iterableClass,project));
                         }
                         kv.set(name, set);
                     }else {
                         //class type
-                        kv.set(name, getFields(PsiUtil.resolveClassInType(type)));
+                        kv.set(name, getFields(PsiUtil.resolveClassInType(type),project));
                     }
                 }
             }
