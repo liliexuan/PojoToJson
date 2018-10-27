@@ -116,7 +116,7 @@ public class BuildJson extends AnAction {
                     } else if(fieldTypeName.startsWith("HashMap") || fieldTypeName.startsWith("Map")){
                         //HashMap or Map
                      //   PsiType mapType = PsiUtil.extractIterableTypeParameter(type, false);
-                        CompletableFuture.runAsync(()->{
+                        CompletableFuture.runAsync(()-> {
                             try {
                                 TimeUnit.MILLISECONDS.sleep(700);
                                 Notification warning = notificationGroup.createNotification("Map Type Can not Change,So pass", NotificationType.WARNING);
@@ -124,6 +124,7 @@ public class BuildJson extends AnAction {
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
+                        });
                     }else if (fieldTypeName.startsWith("Set") || fieldTypeName.startsWith("HashSet")){
                         //set hashset type
                         PsiType iterableType = PsiUtil.extractIterableTypeParameter(type, false);
