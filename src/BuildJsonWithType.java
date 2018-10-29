@@ -86,7 +86,7 @@ public class BuildJsonWithType extends AnAction {
                 String name = field.getName();
                 String remark ="";
                 if(field.getDocComment()!=null) {
-                    remark=field.getDocComment().getText().replace("*", "").replace("/", "").replace(" ", "").replace("\n", ",");
+                    remark=field.getDocComment().getText().replace("*", "").replace("/", "").replace(" ", "").replace("\n", ",").replace("\t","");
                     remark=trimFirstAndLastChar(remark,',');
                 }
                 // 如果是基本类型
