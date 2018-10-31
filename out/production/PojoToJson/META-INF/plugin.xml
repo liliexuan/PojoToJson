@@ -10,7 +10,8 @@
     ]]></description>
 
   <change-notes><![CDATA[
-      1.0.0:BuildJson,BuildJsonWithType,BuildJsonForYapi,insufficient：Does not support HashMap and Map<br>
+      - 1.0.0:BuildJson,BuildJsonWithType,BuildJsonForYapi<br>
+      - 1.0.1:fixbug:"\t"
     ]]>
   </change-notes>
 
