@@ -42,6 +42,7 @@ public class BuildJson extends AnAction {
         normalTypes.put("String", "String");
         SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         normalTypes.put("Date", simpleDateFormat.format(new Date()));
+        normalTypes.put("BigDecimal",null);
     }
 
     private static boolean isNormalType(String typeName) {

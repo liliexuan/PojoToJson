@@ -49,6 +49,7 @@ public class BuildJsonForYapi extends AnAction {
         normalTypes.put("Double", 0.0D);
         normalTypes.put("String", "");
         normalTypes.put("Date", null);
+        normalTypes.put("BigDecimal",null);
     }
 
     private static boolean isNormalType(String typeName) {
